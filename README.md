@@ -1,4 +1,4 @@
-STILL IN ALPHA PHASE
+**STILL IN ALPHA PHASE**
 # 🎨 PyRevit UI Auto-Themer (C#)
 
 A standalone desktop utility designed to automates the conversion of legacy hardcoded PyRevit UIs into a dynamic, theme-swappable framework supporting **Light and Dark Modes**.
