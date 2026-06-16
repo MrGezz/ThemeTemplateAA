@@ -1,0 +1,62 @@
+﻿<Window x:Class="AutoThemerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PyRevit Auto-Themer" 
+        SizeToContent="Height" 
+        Width="500"
+        WindowStartupLocation="CenterScreen" 
+        Background="{DynamicResource WindowBg}">
+
+    <Border Padding="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- 1. HEADER -->
+            <DockPanel Grid.Row="0" Margin="0,0,0,20">
+                <TextBlock Text="PyRevit Theme Patcher" FontWeight="Bold" FontSize="16" 
+                           Foreground="{DynamicResource TextMain}" 
+                           DockPanel.Dock="Left" VerticalAlignment="Center"/>
+                <Button x:Name="btnTheme" 
+                        Content="🌑 Dark Mode"
+                        HorizontalAlignment="Right" 
+                        Width="100"
+                        Click="ToggleTheme_Click" 
+                        Background="Transparent" 
+                        Foreground="{DynamicResource TextMain}"
+                        BorderThickness="0"
+                        Padding="5"
+                        Cursor="Hand"/>
+            </DockPanel>
+
+            <!-- 2. CONTENT AREA -->
+            <StackPanel Grid.Row="1" Margin="0,0,0,25">
+                <TextBlock Text="This tool upgrades any PyRevit .pushbutton folder to the new dynamic Light/Dark theme framework. It will automatically backup your files before modifying them." 
+                           Foreground="{DynamicResource TextSecondary}" 
+                           TextWrapping="Wrap" Margin="0,0,0,15"/>
+
+                <TextBlock x:Name="lblStatus" Text="Ready to patch..." 
+                           Foreground="{DynamicResource TextMain}" 
+                           FontWeight="Bold" TextAlignment="Center" Margin="0,10,0,0"/>
+            </StackPanel>
+
+            <!-- 3. BUTTONS -->
+            <DockPanel Grid.Row="2" LastChildFill="False">
+                <Button Content="CLOSE" 
+                        Click="Close_Click" 
+                        Width="120" Height="35" 
+                        Background="#757575" Foreground="White" 
+                        DockPanel.Dock="Left" FontWeight="Bold" BorderThickness="0"/>
+
+                <Button Content="SELECT FOLDER &amp; PATCH" 
+                        Click="Patch_Click" 
+                        Width="200" Height="35" 
+                        Background="#2E7D32" Foreground="White" 
+                        DockPanel.Dock="Right" FontWeight="Bold" BorderThickness="0"/>
+            </DockPanel>
+        </Grid>
+    </Border>
+</Window>
